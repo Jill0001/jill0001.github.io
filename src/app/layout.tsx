@@ -1,20 +1,25 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
 export const metadata: Metadata = {
-  title: "Website Clone",
-  description: "Pixel-perfect website clone",
+  title: "Mengzhao Jia | Multimodal AI Researcher",
+  description:
+    "Personal website of Mengzhao Jia, a Ph.D. student researching multimodal reasoning and vision-language models at the University of Notre Dame.",
+  keywords: [
+    "Mengzhao Jia",
+    "multimodal reasoning",
+    "vision-language models",
+    "multimodal AI",
+    "University of Notre Dame",
+  ],
+  authors: [{ name: "Mengzhao Jia" }],
+  openGraph: {
+    title: "Mengzhao Jia | Multimodal AI Researcher",
+    description:
+      "Research in multimodal reasoning, vision-language models, and trustworthy AI.",
+    type: "website",
+    url: "https://jill0001.github.io/",
+  },
 };
 
 export default function RootLayout({
@@ -23,11 +28,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">{children}</body>
+    <html lang="en">
+      <body>{children}</body>
     </html>
   );
 }
