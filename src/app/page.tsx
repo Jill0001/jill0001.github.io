@@ -13,6 +13,15 @@ const publications = [
   {
     venue: "ACL 2026",
     title: "MMTutorBench: The First Multimodal Benchmark for AI Math Tutoring",
+    authors: [
+      "Tengchao Yang",
+      "Sichen Guo",
+      "Mengzhao Jia",
+      "Jiaming Su",
+      "Yuanyang Liu",
+      "Zhihan Zhang",
+      "Meng Jiang",
+    ],
     image: "/images/publications/mmtutorbench.png",
     imageAlt: "MMTutorBench overview",
     imageHref: "https://aclanthology.org/2026.acl-long.1068/",
@@ -27,6 +36,14 @@ const publications = [
   {
     venue: "Findings of ACL 2026",
     title: "AutoRubric: Rubric-Based Generative Rewards for Faithful Multimodal Reasoning",
+    authors: [
+      "Mengzhao Jia",
+      "Zhihan Zhang",
+      "Ignacio Cases",
+      "Zheyuan Liu",
+      "Meng Jiang",
+      "Peng Qi",
+    ],
     image: "/images/publications/autorubric.png",
     imageAlt: "AutoRubric method overview",
     imageHref: "https://aclanthology.org/2026.findings-acl.1282/",
@@ -40,6 +57,7 @@ const publications = [
   {
     venue: "arXiv 2026",
     title: "Prioritizing the Best: Incentivizing Reliable Multimodal Reasoning by Rewarding Beyond Answer Correctness",
+    authors: ["Mengzhao Jia", "Zhihan Zhang", "Meng Jiang"],
     image: "/images/publications/prioritizing-best.png",
     imageAlt: "Groupwise Ranking Reward overview",
     imageHref: "https://arxiv.org/abs/2604.18892",
@@ -50,6 +68,17 @@ const publications = [
   {
     venue: "TMLR 2025",
     title: "Leopard: A Vision Language Model for Text-Rich Multi-Image Tasks",
+    authors: [
+      "Mengzhao Jia",
+      "Wenhao Yu",
+      "Kaixin Ma",
+      "Tianqing Fang",
+      "Zhihan Zhang",
+      "Siru Ouyang",
+      "Hongming Zhang",
+      "Meng Jiang",
+      "Dong Yu",
+    ],
     image: "/images/publications/leopard.png",
     imageAlt: "Leopard model overview",
     imageHref: "https://openreview.net/forum?id=R2rasAEPVi",
@@ -67,6 +96,15 @@ const publications = [
   {
     venue: "NAACL 2025",
     title: "Protecting Privacy in Multimodal Large Language Models with MLLMU-Bench",
+    authors: [
+      "Zheyuan Liu",
+      "Guangyao Dou",
+      "Mengzhao Jia",
+      "Zhaoxuan Tan",
+      "Qingkai Zeng",
+      "Yongle Yuan",
+      "Meng Jiang",
+    ],
     image: "/images/publications/mllmu-bench.png",
     imageAlt: "MLLMU-Bench overview",
     imageHref: "https://aclanthology.org/2025.naacl-long.207/",
@@ -81,6 +119,7 @@ const publications = [
   {
     venue: "NAACL 2025",
     title: "MultiChartQA: Benchmarking Vision-Language Models on Multi-Chart Problems",
+    authors: ["Zifeng Zhu", "Mengzhao Jia", "Zhihan Zhang", "Lang Li", "Meng Jiang"],
     image: "/images/publications/multichartqa.png",
     imageAlt: "MultiChartQA benchmark overview",
     imageHref: "https://aclanthology.org/2025.naacl-long.566/",
@@ -94,6 +133,17 @@ const publications = [
   {
     venue: "ICLR 2025",
     title: "RepoGraph: Enhancing AI Software Engineering with Repository-Level Code Graph",
+    authors: [
+      "Siru Ouyang",
+      "Wenhao Yu",
+      "Kaixin Ma",
+      "Zilin Xiao",
+      "Zhihan Zhang",
+      "Mengzhao Jia",
+      "Jiawei Han",
+      "Hongming Zhang",
+      "Dong Yu",
+    ],
     image: "/images/publications/repograph.png",
     imageAlt: "RepoGraph method overview",
     imageHref: "https://openreview.net/forum?id=dw9VUsSHGB",
@@ -107,6 +157,14 @@ const publications = [
   {
     venue: "IEEE TPAMI 2024",
     title: "Query-Oriented Micro-Video Summarization",
+    authors: [
+      "Mengzhao Jia",
+      "Yinwei Wei",
+      "Xuemeng Song",
+      "Teng Sun",
+      "Min Zhang",
+      "Liqiang Nie",
+    ],
     image: "/images/publications/qms.png",
     imageAlt: "Query-oriented micro-video summarization model overview",
     imageHref: "https://doi.org/10.1109/TPAMI.2024.3355402",
@@ -120,6 +178,7 @@ const publications = [
   {
     venue: "arXiv 2024",
     title: "Describe-then-Reason: Improving Multimodal Mathematical Reasoning through Visual Comprehension Training",
+    authors: ["Mengzhao Jia", "Zhihan Zhang", "Wenhao Yu", "Fangkai Jiao", "Meng Jiang"],
     image: "/images/publications/describe-then-reason.png",
     imageAlt: "Describe-then-Reason training and inference pipeline",
     imageHref: "https://arxiv.org/abs/2404.14604",
@@ -133,6 +192,7 @@ const publications = [
   {
     venue: "AAAI 2024",
     title: "Debiasing Multimodal Sarcasm Detection with Contrastive Learning",
+    authors: ["Mengzhao Jia", "Can Xie", "Liqiang Jing"],
     image: "/images/publications/debiasing-sarcasm.png",
     imageAlt: "Counterfactual data augmentation for multimodal sarcasm detection",
     imageHref: "https://ojs.aaai.org/index.php/AAAI/article/view/29795",
@@ -387,6 +447,18 @@ export default function Home() {
                   <h3 className="mt-3 text-xl font-semibold leading-7 tracking-[-0.025em] text-slate-900 sm:text-2xl">
                     {publication.title}
                   </h3>
+                  <p className="mt-2 max-w-3xl text-sm italic leading-6 text-slate-600">
+                    {publication.authors.map((author, authorIndex) => (
+                      <span key={author}>
+                        {author === "Mengzhao Jia" ? (
+                          <strong className="font-bold text-slate-700">{author}</strong>
+                        ) : (
+                          author
+                        )}
+                        {authorIndex < publication.authors.length - 1 ? ", " : ""}
+                      </span>
+                    ))}
+                  </p>
                   <p className="mt-3 max-w-3xl leading-7 text-slate-600">{publication.summary}</p>
                   <div className="mt-5 flex flex-wrap gap-x-5 gap-y-2">
                     {publication.links.map((link) => (
