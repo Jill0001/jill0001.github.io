@@ -3,13 +3,23 @@ import {
   ArrowDown,
   ArrowUpRight,
   BookOpen,
-  Code,
-  ExternalLink,
   FileText,
   MapPin,
 } from "lucide-react";
 
-const publications = [
+type Publication = {
+  venue: string;
+  title: string;
+  authors: string[];
+  equalContributionAuthors?: string[];
+  image: string;
+  imageAlt: string;
+  imageHref: string;
+  summary: string;
+  links: { label: string; href: string }[];
+};
+
+const publications: Publication[] = [
   {
     venue: "ACL 2026",
     title: "MMTutorBench: The First Multimodal Benchmark for AI Math Tutoring",
@@ -22,6 +32,7 @@ const publications = [
       "Zhihan Zhang",
       "Meng Jiang",
     ],
+    equalContributionAuthors: ["Tengchao Yang", "Sichen Guo"],
     image: "/images/publications/mmtutorbench.png",
     imageAlt: "MMTutorBench overview",
     imageHref: "https://aclanthology.org/2026.acl-long.1068/",
@@ -120,6 +131,7 @@ const publications = [
     venue: "NAACL 2025",
     title: "MultiChartQA: Benchmarking Vision-Language Models on Multi-Chart Problems",
     authors: ["Zifeng Zhu", "Mengzhao Jia", "Zhihan Zhang", "Lang Li", "Meng Jiang"],
+    equalContributionAuthors: ["Zifeng Zhu", "Mengzhao Jia"],
     image: "/images/publications/multichartqa.png",
     imageAlt: "MultiChartQA benchmark overview",
     imageHref: "https://aclanthology.org/2025.naacl-long.566/",
@@ -128,30 +140,6 @@ const publications = [
     links: [
       { label: "Paper", href: "https://aclanthology.org/2025.naacl-long.566/" },
       { label: "Code", href: "https://github.com/Zivenzhu/Multi-chart-QA" },
-    ],
-  },
-  {
-    venue: "ICLR 2025",
-    title: "RepoGraph: Enhancing AI Software Engineering with Repository-Level Code Graph",
-    authors: [
-      "Siru Ouyang",
-      "Wenhao Yu",
-      "Kaixin Ma",
-      "Zilin Xiao",
-      "Zhihan Zhang",
-      "Mengzhao Jia",
-      "Jiawei Han",
-      "Hongming Zhang",
-      "Dong Yu",
-    ],
-    image: "/images/publications/repograph.png",
-    imageAlt: "RepoGraph method overview",
-    imageHref: "https://openreview.net/forum?id=dw9VUsSHGB",
-    summary:
-      "A repository-level code graph that gives AI software engineering systems structured context for navigating and modifying codebases.",
-    links: [
-      { label: "Paper", href: "https://openreview.net/forum?id=dw9VUsSHGB" },
-      { label: "Code", href: "https://github.com/ozyyshr/RepoGraph" },
     ],
   },
   {
@@ -210,26 +198,21 @@ const experiences = [
     period: "Mar — Sep 2025",
     role: "Research Intern",
     organization: "Orby AI · Mountain View, CA",
-    description: "Worked on multimodal reasoning research and research-to-product systems.",
   },
   {
     period: "May — Sep 2024",
     role: "Research Intern",
     organization: "Tencent AI Lab · Seattle, WA",
-    description:
-      "Contributed to large-scale training for text-rich, multi-image vision-language models.",
   },
   {
     period: "Jun 2022 — Jan 2023",
     role: "Research Intern",
     organization: "Alibaba DAMO Academy · Hangzhou, China",
-    description: "Conducted applied multimodal machine-learning research.",
   },
   {
     period: "Apr 2021 — Jan 2022",
     role: "Research Intern",
     organization: "Kuaishou · Beijing, China",
-    description: "Worked on video captioning and multimodal pretraining.",
   },
 ];
 
@@ -255,11 +238,6 @@ const education = [
 ];
 
 const socialLinks = [
-  {
-    label: "GitHub",
-    href: "https://github.com/Jill0001/",
-    icon: Code,
-  },
   {
     label: "Google Scholar",
     href: "https://scholar.google.com/citations?hl=en&user=E332upAAAAAJ",
@@ -327,7 +305,7 @@ export default function Home() {
                 <span>Notre Dame, Indiana</span>
               </p>
               <p>
-                Ph.D. student in Computer Science and Engineering at the University of Notre Dame.
+                Third-year Ph.D. student in Computer Science and Engineering at the University of Notre Dame.
               </p>
             </div>
 
@@ -350,20 +328,6 @@ export default function Home() {
               })}
             </div>
 
-            <div className="mt-7 border-t border-slate-200 pt-6">
-              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#344dba]">
-                Open to opportunities
-              </p>
-              <p className="mt-3 text-sm leading-6 text-slate-600">
-                I am currently seeking internship and full-time opportunities in multimodal AI,
-                vision-language models, and AI reasoning. Please reach out at{" "}
-                <span className="font-medium text-slate-700">
-                  jiamengzhao98 [at] gmail [dot] com
-                </span>
-                .
-              </p>
-            </div>
-
             <a
               href="/Mengzhao_Jia_CV.pdf"
               target="_blank"
@@ -382,13 +346,31 @@ export default function Home() {
               Mengzhao Jia
             </h1>
             <p className="mt-7 max-w-2xl text-lg leading-8 text-slate-700 sm:text-xl">
-              I study how multimodal models can reason faithfully over complex visual and textual evidence.
+              I work on multimodal large language models, with a focus on multimodal reasoning,
+              reinforcement learning, and vision-language-action models.
             </p>
             <p className="mt-5 max-w-2xl text-base leading-8 text-slate-600">
-              I am advised by Prof. Meng Jiang at the University of Notre Dame. My work sits at the intersection of multimodal reasoning, vision-language models, and trustworthy AI—with an emphasis on process supervision, multi-image understanding, and mathematical reasoning.
+              I am a third-year Ph.D. student in Computer Science and Engineering at the University
+              of Notre Dame, advised by Prof. Meng Jiang. Before starting my Ph.D., I received my
+              M.S. in Computer Science and Engineering from Shandong University, advised by Prof.
+              Liqiang Nie.
             </p>
 
-            <div className="mt-9 flex flex-wrap gap-2.5">
+            <div className="mt-7 max-w-2xl border-l-2 border-[#344dba] pl-4">
+              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#344dba]">
+                Open to internships &amp; full-time roles
+              </p>
+              <p className="mt-2 text-sm leading-6 text-slate-600">
+                I am currently seeking opportunities in multimodal AI, reinforcement learning, and
+                vision-language-action models. Please reach out at{" "}
+                <span className="font-medium text-slate-700">
+                  jiamengzhao98 [at] gmail [dot] com
+                </span>
+                .
+              </p>
+            </div>
+
+            <div className="mt-8 flex flex-wrap gap-2.5">
               {[
                 "Multimodal Large Language Models",
                 "Multimodal Reasoning",
@@ -455,22 +437,27 @@ export default function Home() {
                         ) : (
                           author
                         )}
+                        {publication.equalContributionAuthors?.includes(author) ? (
+                          <sup className="text-[0.65rem] font-semibold">*</sup>
+                        ) : null}
                         {authorIndex < publication.authors.length - 1 ? ", " : ""}
                       </span>
                     ))}
                   </p>
+                  {publication.equalContributionAuthors ? (
+                    <p className="mt-1 text-xs italic text-slate-500">* Equal Contribution</p>
+                  ) : null}
                   <p className="mt-3 max-w-3xl leading-7 text-slate-600">{publication.summary}</p>
-                  <div className="mt-5 flex flex-wrap gap-x-5 gap-y-2">
+                  <div className="mt-5 flex flex-wrap gap-2">
                     {publication.links.map((link) => (
                       <a
                         key={link.label}
                         href={link.href}
                         target="_blank"
                         rel="noreferrer"
-                        className="inline-flex items-center gap-1.5 text-sm font-semibold text-slate-800 transition-colors hover:text-[#344dba]"
+                        className="inline-flex items-center rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-slate-700 transition-all hover:-translate-y-px hover:border-[#344dba]/35 hover:bg-[#f2f5ff] hover:text-[#344dba] hover:shadow-sm"
                       >
                         {link.label}
-                        <ExternalLink className="size-3.5" aria-hidden="true" />
                       </a>
                     ))}
                   </div>
@@ -494,7 +481,6 @@ export default function Home() {
                 <div>
                   <h3 className="text-lg font-semibold text-slate-900">{experience.role}</h3>
                   <p className="mt-1 font-medium text-slate-700">{experience.organization}</p>
-                  <p className="mt-2 max-w-3xl leading-7 text-slate-600">{experience.description}</p>
                 </div>
               </li>
             ))}
