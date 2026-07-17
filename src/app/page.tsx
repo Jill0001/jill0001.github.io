@@ -6,34 +6,57 @@ import {
   Code,
   ExternalLink,
   FileText,
-  GraduationCap,
   MapPin,
 } from "lucide-react";
 
 const publications = [
   {
+    venue: "ACL 2026",
+    title: "MMTutorBench: The First Multimodal Benchmark for AI Math Tutoring",
+    image: "/images/publications/mmtutorbench.png",
+    imageAlt: "MMTutorBench overview",
+    imageHref: "https://aclanthology.org/2026.acl-long.1068/",
+    summary:
+      "A benchmark for evaluating multimodal models on mathematical tutoring across insight discovery, operation formulation, and operation execution.",
+    links: [
+      { label: "Paper", href: "https://aclanthology.org/2026.acl-long.1068/" },
+      { label: "Code", href: "https://github.com/TangciuYueng/MMTutorBench" },
+      { label: "Dataset", href: "https://huggingface.co/datasets/Tangchiu/mmtutorbench" },
+    ],
+  },
+  {
     venue: "Findings of ACL 2026",
     title: "AutoRubric: Rubric-Based Generative Rewards for Faithful Multimodal Reasoning",
     image: "/images/publications/autorubric.png",
     imageAlt: "AutoRubric method overview",
-    imageHref: "https://arxiv.org/abs/2510.14738",
+    imageHref: "https://aclanthology.org/2026.findings-acl.1282/",
     summary:
       "A rubric-driven reward framework for improving the accuracy and faithfulness of multimodal reasoning.",
     links: [
-      { label: "Paper", href: "https://arxiv.org/abs/2510.14738" },
+      { label: "Paper", href: "https://aclanthology.org/2026.findings-acl.1282/" },
       { label: "Code", href: "https://github.com/Jill0001/AutoRubric-R1V" },
     ],
   },
   {
-    venue: "TMLR",
-    title: "Leopard: A Vision-Language Model for Text-Centric Multi-Image Tasks",
+    venue: "arXiv 2026",
+    title: "Prioritizing the Best: Incentivizing Reliable Multimodal Reasoning by Rewarding Beyond Answer Correctness",
+    image: "/images/publications/prioritizing-best.png",
+    imageAlt: "Groupwise Ranking Reward overview",
+    imageHref: "https://arxiv.org/abs/2604.18892",
+    summary:
+      "A groupwise ranking reward that favors reliable, verifier-passed multimodal reasoning trajectories beyond final-answer correctness.",
+    links: [{ label: "Paper", href: "https://arxiv.org/abs/2604.18892" }],
+  },
+  {
+    venue: "TMLR 2025",
+    title: "Leopard: A Vision Language Model for Text-Rich Multi-Image Tasks",
     image: "/images/publications/leopard.png",
     imageAlt: "Leopard model overview",
-    imageHref: "https://arxiv.org/abs/2410.01744",
+    imageHref: "https://openreview.net/forum?id=R2rasAEPVi",
     summary:
       "A vision-language model and instruction data for reasoning over text-rich, multi-image inputs.",
     links: [
-      { label: "Paper", href: "https://arxiv.org/abs/2410.01744" },
+      { label: "Paper", href: "https://openreview.net/forum?id=R2rasAEPVi" },
       { label: "Code", href: "https://github.com/tencent-ailab/Leopard" },
       {
         label: "Dataset",
@@ -43,14 +66,81 @@ const publications = [
   },
   {
     venue: "NAACL 2025",
+    title: "Protecting Privacy in Multimodal Large Language Models with MLLMU-Bench",
+    image: "/images/publications/mllmu-bench.png",
+    imageAlt: "MLLMU-Bench overview",
+    imageHref: "https://aclanthology.org/2025.naacl-long.207/",
+    summary:
+      "A benchmark for evaluating multimodal machine unlearning and privacy protection in large language models.",
+    links: [
+      { label: "Paper", href: "https://aclanthology.org/2025.naacl-long.207/" },
+      { label: "Code", href: "https://github.com/franciscoliu/MLLMU-Bench" },
+      { label: "Dataset", href: "https://huggingface.co/datasets/MLLMMU/MLLMU-Bench" },
+    ],
+  },
+  {
+    venue: "NAACL 2025",
     title: "MultiChartQA: Benchmarking Vision-Language Models on Multi-Chart Problems",
     image: "/images/publications/multichartqa.png",
     imageAlt: "MultiChartQA benchmark overview",
-    imageHref: "https://github.com/Zivenzhu/Multi-chart-QA",
+    imageHref: "https://aclanthology.org/2025.naacl-long.566/",
     summary:
       "A benchmark for multi-hop, comparative, and sequential reasoning across multiple charts.",
     links: [
+      { label: "Paper", href: "https://aclanthology.org/2025.naacl-long.566/" },
       { label: "Code", href: "https://github.com/Zivenzhu/Multi-chart-QA" },
+    ],
+  },
+  {
+    venue: "ICLR 2025",
+    title: "RepoGraph: Enhancing AI Software Engineering with Repository-Level Code Graph",
+    image: "/images/publications/repograph.png",
+    imageAlt: "RepoGraph method overview",
+    imageHref: "https://openreview.net/forum?id=dw9VUsSHGB",
+    summary:
+      "A repository-level code graph that gives AI software engineering systems structured context for navigating and modifying codebases.",
+    links: [
+      { label: "Paper", href: "https://openreview.net/forum?id=dw9VUsSHGB" },
+      { label: "Code", href: "https://github.com/ozyyshr/RepoGraph" },
+    ],
+  },
+  {
+    venue: "IEEE TPAMI 2024",
+    title: "Query-Oriented Micro-Video Summarization",
+    image: "/images/publications/qms.png",
+    imageAlt: "Query-oriented micro-video summarization model overview",
+    imageHref: "https://doi.org/10.1109/TPAMI.2024.3355402",
+    summary:
+      "A multimodal framework for generating concise, query-oriented summaries of micro-videos to support retrieval.",
+    links: [
+      { label: "Paper", href: "https://doi.org/10.1109/TPAMI.2024.3355402" },
+      { label: "Code", href: "https://github.com/Jill0001/QMS" },
+    ],
+  },
+  {
+    venue: "arXiv 2024",
+    title: "Describe-then-Reason: Improving Multimodal Mathematical Reasoning through Visual Comprehension Training",
+    image: "/images/publications/describe-then-reason.png",
+    imageAlt: "Describe-then-Reason training and inference pipeline",
+    imageHref: "https://arxiv.org/abs/2404.14604",
+    summary:
+      "A two-step training approach that improves multimodal mathematical reasoning through visual comprehension training.",
+    links: [
+      { label: "Paper", href: "https://arxiv.org/abs/2404.14604" },
+      { label: "Code", href: "https://github.com/Jill0001/Describe-then-Reason" },
+    ],
+  },
+  {
+    venue: "AAAI 2024",
+    title: "Debiasing Multimodal Sarcasm Detection with Contrastive Learning",
+    image: "/images/publications/debiasing-sarcasm.png",
+    imageAlt: "Counterfactual data augmentation for multimodal sarcasm detection",
+    imageHref: "https://ojs.aaai.org/index.php/AAAI/article/view/29795",
+    summary:
+      "A contrastive framework that reduces spurious textual bias for robust out-of-distribution multimodal sarcasm detection.",
+    links: [
+      { label: "Paper", href: "https://ojs.aaai.org/index.php/AAAI/article/view/29795" },
+      { label: "Code", href: "https://github.com/Jill0001/MAS" },
     ],
   },
 ];
@@ -240,10 +330,10 @@ export default function Home() {
 
             <div className="mt-9 flex flex-wrap gap-2.5">
               {[
-                "Multimodal reasoning",
-                "Vision-language models",
-                "Process supervision",
-                "Trustworthy AI",
+                "Multimodal Large Language Models",
+                "Multimodal Reasoning",
+                "Reinforcement Learning",
+                "Vision Language Action Models",
               ].map((interest) => (
                 <span
                   key={interest}
@@ -319,54 +409,45 @@ export default function Home() {
         </section>
 
         <section id="experience" className="border-b border-slate-200 py-16 lg:py-24">
-          <div className="grid gap-10 lg:grid-cols-[minmax(220px,0.55fr)_minmax(0,1.45fr)] lg:gap-20">
-            <div>
-              <h2 className="font-serif text-4xl font-medium tracking-[-0.045em] text-slate-950 sm:text-5xl">
-                Experience
-              </h2>
-            </div>
-
-            <ol className="border-t border-slate-200">
-              {experiences.map((experience) => (
-                <li key={`${experience.organization}-${experience.period}`} className="grid gap-3 border-b border-slate-200 py-7 sm:grid-cols-[10rem_minmax(0,1fr)] sm:gap-8">
-                  <p className="font-mono text-xs leading-6 text-slate-400">{experience.period}</p>
-                  <div>
-                    <h3 className="text-lg font-semibold text-slate-900">{experience.role}</h3>
-                    <p className="mt-1 font-medium text-slate-700">{experience.organization}</p>
-                    <p className="mt-2 max-w-2xl leading-7 text-slate-600">{experience.description}</p>
-                  </div>
-                </li>
-              ))}
-            </ol>
-          </div>
+          <h2 className="font-serif text-3xl font-medium tracking-[-0.045em] text-slate-950 sm:text-4xl">
+            Experience
+          </h2>
+          <ol className="mt-8 divide-y divide-slate-200 border-y border-slate-200">
+            {experiences.map((experience) => (
+              <li
+                key={`${experience.organization}-${experience.period}`}
+                className="grid gap-3 py-7 sm:grid-cols-[13.5rem_minmax(0,1fr)] sm:gap-8"
+              >
+                <p className="font-mono text-xs leading-6 text-slate-400">{experience.period}</p>
+                <div>
+                  <h3 className="text-lg font-semibold text-slate-900">{experience.role}</h3>
+                  <p className="mt-1 font-medium text-slate-700">{experience.organization}</p>
+                  <p className="mt-2 max-w-3xl leading-7 text-slate-600">{experience.description}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
         </section>
 
         <section id="education" className="py-16 lg:py-24">
-          <div className="grid gap-10 lg:grid-cols-[minmax(220px,0.55fr)_minmax(0,1.45fr)] lg:gap-20">
-            <div>
-              <h2 className="font-serif text-4xl font-medium tracking-[-0.045em] text-slate-950 sm:text-5xl">
-                Education
-              </h2>
-            </div>
-
-            <div className="grid gap-4">
-              {education.map((item) => (
-                <article key={item.degree} className="rounded-2xl border border-slate-200 bg-white p-6 sm:p-7">
-                  <div className="flex flex-wrap items-start justify-between gap-4">
-                    <div className="flex items-start gap-3">
-                      <GraduationCap className="mt-1 size-5 shrink-0 text-[#344dba]" aria-hidden="true" />
-                      <div>
-                        <h3 className="text-lg font-semibold text-slate-900">{item.degree}</h3>
-                        <p className="mt-1 font-medium text-slate-700">{item.school}</p>
-                      </div>
-                    </div>
-                    <p className="font-mono text-xs text-slate-400">{item.period}</p>
-                  </div>
-                  <p className="mt-4 pl-8 leading-7 text-slate-600">{item.detail}</p>
-                </article>
-              ))}
-            </div>
-          </div>
+          <h2 className="font-serif text-3xl font-medium tracking-[-0.045em] text-slate-950 sm:text-4xl">
+            Education
+          </h2>
+          <ol className="mt-8 divide-y divide-slate-200 border-y border-slate-200">
+            {education.map((item) => (
+              <li
+                key={item.degree}
+                className="grid gap-3 py-7 sm:grid-cols-[13.5rem_minmax(0,1fr)] sm:gap-8"
+              >
+                <p className="font-mono text-xs leading-6 text-slate-400">{item.period}</p>
+                <div>
+                  <h3 className="text-lg font-semibold text-slate-900">{item.degree}</h3>
+                  <p className="mt-1 font-medium text-slate-700">{item.school}</p>
+                  <p className="mt-2 max-w-3xl leading-7 text-slate-600">{item.detail}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
         </section>
 
       </main>
