@@ -1,8 +1,8 @@
 import Image from "next/image";
 import {
-  ArrowDown,
   ArrowUpRight,
   BookOpen,
+  ExternalLink,
   FileText,
   MapPin,
 } from "lucide-react";
@@ -204,36 +204,23 @@ const experiences = [
     role: "Research Intern",
     organization: "Tencent AI Lab · Seattle, WA",
   },
-  {
-    period: "Jun 2022 — Jan 2023",
-    role: "Research Intern",
-    organization: "Alibaba DAMO Academy · Hangzhou, China",
-  },
-  {
-    period: "Apr 2021 — Jan 2022",
-    role: "Research Intern",
-    organization: "Kuaishou · Beijing, China",
-  },
 ];
 
 const education = [
   {
     period: "2023 — Present",
     degree: "Ph.D. in Computer Science and Engineering",
-    school: "University of Notre Dame",
-    detail: "Advised by Prof. Meng Jiang.",
+    school: "University of Notre Dame, advised by Prof. Meng Jiang.",
   },
   {
     period: "2020 — 2023",
     degree: "M.S. in Computer Science and Engineering",
-    school: "Shandong University",
-    detail: "Advised by Prof. Liqiang Nie.",
+    school: "Shandong University, advised by Prof. Liqiang Nie.",
   },
   {
     period: "2016 — 2020",
     degree: "B.Eng. in Electronic Science and Technology",
     school: "Shandong University",
-    detail: "Undergraduate studies in electronic science and technology.",
   },
 ];
 
@@ -242,6 +229,11 @@ const socialLinks = [
     label: "Google Scholar",
     href: "https://scholar.google.com/citations?hl=en&user=E332upAAAAAJ",
     icon: BookOpen,
+  },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/mengzhao-jia-a2b838294/",
+    icon: ExternalLink,
   },
 ];
 
@@ -268,7 +260,7 @@ export default function Home() {
               Publications
             </a>
             <a className="transition-colors hover:text-slate-950" href="#experience">
-              Experience
+              Work Experience
             </a>
             <a className="transition-colors hover:text-slate-950" href="#education">
               Education
@@ -299,13 +291,10 @@ export default function Home() {
               />
             </div>
 
-            <div className="mt-7 space-y-3 text-sm leading-6 text-slate-600">
+            <div className="mt-7 text-sm leading-6 text-slate-600">
               <p className="flex items-start gap-2">
                 <MapPin className="mt-1 size-3.5 shrink-0 text-slate-400" aria-hidden="true" />
                 <span>Notre Dame, Indiana</span>
-              </p>
-              <p>
-                Third-year Ph.D. student in Computer Science and Engineering at the University of Notre Dame.
               </p>
             </div>
 
@@ -335,7 +324,7 @@ export default function Home() {
               className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-slate-900 transition-colors hover:text-[#344dba]"
             >
               <FileText className="size-4" aria-hidden="true" />
-              Download CV
+              CV
               <ArrowUpRight className="size-3.5" aria-hidden="true" />
             </a>
           </aside>
@@ -345,15 +334,12 @@ export default function Home() {
             <h1 className="mt-5 max-w-2xl font-serif text-5xl font-medium leading-[0.98] tracking-[-0.055em] text-slate-950 sm:text-6xl lg:text-7xl">
               Mengzhao Jia
             </h1>
-            <p className="mt-7 max-w-2xl text-lg leading-8 text-slate-700 sm:text-xl">
-              I work on multimodal large language models, with a focus on multimodal reasoning,
-              reinforcement learning, and vision-language-action models.
-            </p>
-            <p className="mt-5 max-w-2xl text-base leading-8 text-slate-600">
+            <p className="mt-7 max-w-2xl text-base leading-8 text-slate-600">
               I am a third-year Ph.D. student in Computer Science and Engineering at the University
               of Notre Dame, advised by Prof. Meng Jiang. Before starting my Ph.D., I received my
               M.S. in Computer Science and Engineering from Shandong University, advised by Prof.
-              Liqiang Nie.
+              Liqiang Nie. I received my B.S. in Electronic Science and Technology from Shandong
+              University.
             </p>
 
             <div className="mt-7 max-w-2xl border-l-2 border-[#344dba] pl-4">
@@ -386,13 +372,6 @@ export default function Home() {
               ))}
             </div>
 
-            <a
-              href="#work"
-              className="mt-11 inline-flex items-center gap-2 text-sm font-semibold text-slate-900 transition-colors hover:text-[#344dba]"
-            >
-              View publications
-              <ArrowDown className="size-4" aria-hidden="true" />
-            </a>
           </div>
         </section>
 
@@ -469,7 +448,7 @@ export default function Home() {
 
         <section id="experience" className="border-b border-slate-200 py-16 lg:py-24">
           <h2 className="font-serif text-3xl font-medium tracking-[-0.045em] text-slate-950 sm:text-4xl">
-            Experience
+            Work Experience
           </h2>
           <ol className="mt-8 divide-y divide-slate-200 border-y border-slate-200">
             {experiences.map((experience) => (
@@ -501,7 +480,6 @@ export default function Home() {
                 <div>
                   <h3 className="text-lg font-semibold text-slate-900">{item.degree}</h3>
                   <p className="mt-1 font-medium text-slate-700">{item.school}</p>
-                  <p className="mt-2 max-w-3xl leading-7 text-slate-600">{item.detail}</p>
                 </div>
               </li>
             ))}
@@ -520,8 +498,8 @@ export default function Home() {
             <a className="transition-colors hover:text-slate-900" href="https://dblp.org/pid/297/0055.html" target="_blank" rel="noreferrer">
               DBLP
             </a>
-            <a className="transition-colors hover:text-slate-900" href="/Mengzhao_Jia_CV.pdf" target="_blank" rel="noreferrer">
-              CV
+            <a className="transition-colors hover:text-slate-900" href="https://openreview.net/profile?id=%7EMengzhao_Jia1" target="_blank" rel="noreferrer">
+              OpenReview
             </a>
           </div>
         </div>
