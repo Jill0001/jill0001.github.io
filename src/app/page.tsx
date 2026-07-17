@@ -7,7 +7,6 @@ import {
   ExternalLink,
   FileText,
   GraduationCap,
-  Mail,
   MapPin,
 } from "lucide-react";
 
@@ -44,21 +43,6 @@ const publications = [
     links: [
       { label: "Code", href: "https://github.com/Zivenzhu/Multi-chart-QA" },
     ],
-  },
-];
-
-const projects = [
-  {
-    title: "Describe-then-Reason",
-    description:
-      "Visual-comprehension training for more capable multimodal mathematical reasoning.",
-    href: "https://github.com/Jill0001/Describe-then-Reason",
-  },
-  {
-    title: "AutoRubric-R1V",
-    description:
-      "Open-source implementation of rubric-based generative rewards for multimodal reasoning.",
-    href: "https://github.com/Jill0001/AutoRubric-R1V",
   },
 ];
 
@@ -99,7 +83,7 @@ const education = [
   },
   {
     period: "2020 — 2023",
-    degree: "M.Phil. in Computer Science and Engineering",
+    degree: "M.S. in Computer Science and Engineering",
     school: "Shandong University",
     detail: "Advised by Prof. Liqiang Nie.",
   },
@@ -114,18 +98,13 @@ const education = [
 const socialLinks = [
   {
     label: "GitHub",
-    href: "https://github.com/Jill0001",
+    href: "https://github.com/Jill0001/",
     icon: Code,
   },
   {
     label: "Google Scholar",
     href: "https://scholar.google.com/citations?hl=en&user=E332upAAAAAJ",
     icon: BookOpen,
-  },
-  {
-    label: "Email",
-    href: "mailto:jiamengzhao98@gmail.com",
-    icon: Mail,
   },
 ];
 
@@ -143,13 +122,13 @@ export default function Home() {
           </a>
           <nav
             aria-label="Primary navigation"
-            className="flex w-full flex-wrap items-center justify-between gap-x-5 gap-y-2 text-sm font-medium text-slate-600 sm:w-auto sm:justify-end sm:gap-x-7"
+            className="flex w-full flex-wrap items-center justify-between gap-x-3 gap-y-2 text-sm font-medium text-slate-600 sm:w-auto sm:justify-end sm:gap-x-7"
           >
             <a className="transition-colors hover:text-slate-950" href="#about">
               About
             </a>
             <a className="transition-colors hover:text-slate-950" href="#work">
-              Work
+              Publications
             </a>
             <a className="transition-colors hover:text-slate-950" href="#experience">
               Experience
@@ -172,14 +151,14 @@ export default function Home() {
       <main id="top" className="mx-auto max-w-6xl px-5 sm:px-8">
         <section id="about" className="grid gap-12 border-b border-slate-200 py-16 lg:grid-cols-[minmax(260px,0.72fr)_minmax(0,1.45fr)] lg:gap-20 lg:py-24">
           <aside className="lg:pt-2">
-            <div className="relative aspect-square max-w-[235px] overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white p-3 shadow-[0_12px_35px_rgba(15,23,42,0.06)]">
+            <div className="relative aspect-square max-w-[235px] overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white shadow-[0_12px_35px_rgba(15,23,42,0.06)]">
               <Image
                 src="/mengzhao-jia.jpg"
-                alt="A black-and-white astronaut illustration used as Mengzhao Jia's profile image"
+                alt="Portrait of Mengzhao Jia"
                 fill
                 priority
                 sizes="235px"
-                className="object-cover p-3"
+                className="object-cover"
               />
             </div>
 
@@ -212,11 +191,25 @@ export default function Home() {
               })}
             </div>
 
+            <div className="mt-7 border-t border-slate-200 pt-6">
+              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#344dba]">
+                Open to opportunities
+              </p>
+              <p className="mt-3 text-sm leading-6 text-slate-600">
+                I am currently seeking internship and full-time opportunities in multimodal AI,
+                vision-language models, and AI reasoning. Please reach out at{" "}
+                <span className="font-medium text-slate-700">
+                  jiamengzhao98 [at] gmail [dot] com
+                </span>
+                .
+              </p>
+            </div>
+
             <a
               href="/Mengzhao_Jia_CV.pdf"
               target="_blank"
               rel="noreferrer"
-              className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-slate-900 transition-colors hover:text-[#344dba]"
+              className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-slate-900 transition-colors hover:text-[#344dba]"
             >
               <FileText className="size-4" aria-hidden="true" />
               Download CV
@@ -225,9 +218,7 @@ export default function Home() {
           </aside>
 
           <div className="max-w-3xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#344dba]">
-              Researcher · Builder
-            </p>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#344dba]">Ph.D. Student</p>
             <h1 className="mt-5 max-w-2xl font-serif text-5xl font-medium leading-[0.98] tracking-[-0.055em] text-slate-950 sm:text-6xl lg:text-7xl">
               Mengzhao Jia
             </h1>
@@ -258,7 +249,7 @@ export default function Home() {
               href="#work"
               className="mt-11 inline-flex items-center gap-2 text-sm font-semibold text-slate-900 transition-colors hover:text-[#344dba]"
             >
-              Explore selected work
+              View publications
               <ArrowDown className="size-4" aria-hidden="true" />
             </a>
           </div>
@@ -267,13 +258,9 @@ export default function Home() {
         <section id="work" className="border-b border-slate-200 py-16 lg:py-24">
           <div className="grid gap-10 lg:grid-cols-[minmax(220px,0.55fr)_minmax(0,1.45fr)] lg:gap-20">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#344dba]">Selected work</p>
-              <h2 className="mt-4 font-serif text-4xl font-medium tracking-[-0.045em] text-slate-950 sm:text-5xl">
-                Research that makes reasoning more reliable.
+              <h2 className="font-serif text-4xl font-medium tracking-[-0.045em] text-slate-950 sm:text-5xl">
+                Publications
               </h2>
-              <p className="mt-5 max-w-sm leading-7 text-slate-600">
-                I develop methods, models, and benchmarks for understanding complex multimodal evidence.
-              </p>
             </div>
 
             <div className="divide-y divide-slate-200 border-t border-slate-200">
@@ -308,42 +295,13 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="mt-12 grid gap-4 md:grid-cols-2">
-            {projects.map((project) => (
-              <a
-                key={project.title}
-                href={project.href}
-                target="_blank"
-                rel="noreferrer"
-                className="group rounded-2xl border border-slate-200 bg-white p-6 transition-all hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-[0_14px_30px_rgba(15,23,42,0.06)]"
-              >
-                <div className="flex items-start justify-between gap-5">
-                  <Code className="size-5 text-[#344dba]" aria-hidden="true" />
-                  <ArrowUpRight className="size-4 text-slate-400 transition-colors group-hover:text-[#344dba]" aria-hidden="true" />
-                </div>
-                <h3 className="mt-10 text-lg font-semibold text-slate-900">{project.title}</h3>
-                <p className="mt-2 leading-7 text-slate-600">{project.description}</p>
-              </a>
-            ))}
-          </div>
-
-          <a
-            href="https://scholar.google.com/citations?hl=en&user=E332upAAAAAJ"
-            target="_blank"
-            rel="noreferrer"
-            className="mt-9 inline-flex items-center gap-2 text-sm font-semibold text-slate-900 transition-colors hover:text-[#344dba]"
-          >
-            See all publications on Google Scholar
-            <ArrowUpRight className="size-4" aria-hidden="true" />
-          </a>
         </section>
 
         <section id="experience" className="border-b border-slate-200 py-16 lg:py-24">
           <div className="grid gap-10 lg:grid-cols-[minmax(220px,0.55fr)_minmax(0,1.45fr)] lg:gap-20">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#344dba]">Experience</p>
-              <h2 className="mt-4 font-serif text-4xl font-medium tracking-[-0.045em] text-slate-950 sm:text-5xl">
-                Research in the lab and in industry.
+              <h2 className="font-serif text-4xl font-medium tracking-[-0.045em] text-slate-950 sm:text-5xl">
+                Experience
               </h2>
             </div>
 
@@ -362,12 +320,11 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="education" className="border-b border-slate-200 py-16 lg:py-24">
+        <section id="education" className="py-16 lg:py-24">
           <div className="grid gap-10 lg:grid-cols-[minmax(220px,0.55fr)_minmax(0,1.45fr)] lg:gap-20">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#344dba]">Education</p>
-              <h2 className="mt-4 font-serif text-4xl font-medium tracking-[-0.045em] text-slate-950 sm:text-5xl">
-                A foundation in computer science and engineering.
+              <h2 className="font-serif text-4xl font-medium tracking-[-0.045em] text-slate-950 sm:text-5xl">
+                Education
               </h2>
             </div>
 
@@ -391,35 +348,13 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="contact" className="py-16 lg:py-24">
-          <div className="rounded-3xl bg-slate-950 px-7 py-10 text-white sm:px-10 sm:py-12">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-300">Get in touch</p>
-            <div className="mt-7 flex flex-col justify-between gap-8 md:flex-row md:items-end">
-              <div>
-                <h2 className="max-w-2xl font-serif text-4xl font-medium leading-[1.02] tracking-[-0.045em] sm:text-5xl">
-                  Interested in multimodal reasoning or a research collaboration?
-                </h2>
-                <p className="mt-5 max-w-xl leading-7 text-slate-300">
-                  I am always happy to connect with researchers, engineers, and collaborators working on reliable AI systems.
-                </p>
-              </div>
-              <a
-                href="mailto:jiamengzhao98@gmail.com"
-                className="inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-slate-950 transition-transform hover:-translate-y-0.5"
-              >
-                <Mail className="size-4" aria-hidden="true" />
-                Send an email
-              </a>
-            </div>
-          </div>
-        </section>
       </main>
 
       <footer className="border-t border-slate-200">
         <div className="mx-auto flex max-w-6xl flex-col gap-3 px-5 py-7 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between sm:px-8">
           <p>© 2026 Mengzhao Jia</p>
           <div className="flex flex-wrap gap-x-5 gap-y-2">
-            <a className="transition-colors hover:text-slate-900" href="https://github.com/Jill0001" target="_blank" rel="noreferrer">
+            <a className="transition-colors hover:text-slate-900" href="https://github.com/Jill0001/" target="_blank" rel="noreferrer">
               GitHub
             </a>
             <a className="transition-colors hover:text-slate-900" href="https://dblp.org/pid/297/0055.html" target="_blank" rel="noreferrer">
