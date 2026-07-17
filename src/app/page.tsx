@@ -336,10 +336,11 @@ export default function Home() {
             </h1>
             <p className="mt-7 max-w-2xl text-base leading-8 text-slate-600">
               I am a third-year Ph.D. student in Computer Science and Engineering at the University
-              of Notre Dame, advised by Prof. Meng Jiang. Before starting my Ph.D., I received my
-              M.S. in Computer Science and Engineering from Shandong University, advised by Prof.
-              Liqiang Nie. I received my B.S. in Electronic Science and Technology from Shandong
-              University.
+              of Notre Dame, advised by Prof. Meng Jiang. My research interests include multimodal
+              large language models, multimodal reasoning, reinforcement learning, and
+              vision-language-action models. Before starting my Ph.D., I received my M.S. in
+              Computer Science and Engineering from Shandong University, advised by Prof. Liqiang
+              Nie. I received my B.S. in Electronic Science and Technology from Shandong University.
             </p>
 
             <div className="mt-7 max-w-2xl border-l-2 border-[#344dba] pl-4">
