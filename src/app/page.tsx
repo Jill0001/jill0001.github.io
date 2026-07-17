@@ -14,6 +14,9 @@ const publications = [
   {
     venue: "Findings of ACL 2026",
     title: "AutoRubric: Rubric-Based Generative Rewards for Faithful Multimodal Reasoning",
+    image: "/images/publications/autorubric.png",
+    imageAlt: "AutoRubric method overview",
+    imageHref: "https://arxiv.org/abs/2510.14738",
     summary:
       "A rubric-driven reward framework for improving the accuracy and faithfulness of multimodal reasoning.",
     links: [
@@ -24,6 +27,9 @@ const publications = [
   {
     venue: "TMLR",
     title: "Leopard: A Vision-Language Model for Text-Centric Multi-Image Tasks",
+    image: "/images/publications/leopard.png",
+    imageAlt: "Leopard model overview",
+    imageHref: "https://arxiv.org/abs/2410.01744",
     summary:
       "A vision-language model and instruction data for reasoning over text-rich, multi-image inputs.",
     links: [
@@ -38,6 +44,9 @@ const publications = [
   {
     venue: "NAACL 2025",
     title: "MultiChartQA: Benchmarking Vision-Language Models on Multi-Chart Problems",
+    image: "/images/publications/multichartqa.png",
+    imageAlt: "MultiChartQA benchmark overview",
+    imageHref: "https://github.com/Zivenzhu/Multi-chart-QA",
     summary:
       "A benchmark for multi-hop, comparative, and sequential reasoning across multiple charts.",
     links: [
@@ -118,7 +127,7 @@ export default function Home() {
             className="font-serif text-xl font-semibold tracking-[-0.05em] text-slate-950 transition-colors hover:text-[#344dba]"
             aria-label="Mengzhao Jia home"
           >
-            MJ.
+            Mengzhao Jia
           </a>
           <nav
             aria-label="Primary navigation"
@@ -256,45 +265,57 @@ export default function Home() {
         </section>
 
         <section id="work" className="border-b border-slate-200 py-16 lg:py-24">
-          <div className="grid gap-10 lg:grid-cols-[minmax(220px,0.55fr)_minmax(0,1.45fr)] lg:gap-20">
-            <div>
-              <h2 className="font-serif text-4xl font-medium tracking-[-0.045em] text-slate-950 sm:text-5xl">
-                Publications
-              </h2>
-            </div>
-
-            <div className="divide-y divide-slate-200 border-t border-slate-200">
-              {publications.map((publication, index) => (
-                <article key={publication.title} className="grid gap-4 py-8 sm:grid-cols-[2.5rem_minmax(0,1fr)] sm:gap-6">
-                  <p className="pt-1 font-mono text-xs text-slate-400">0{index + 1}</p>
-                  <div>
-                    <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#344dba]">
-                      {publication.venue}
-                    </p>
-                    <h3 className="mt-3 text-xl font-semibold leading-7 tracking-[-0.025em] text-slate-900 sm:text-2xl">
-                      {publication.title}
-                    </h3>
-                    <p className="mt-3 max-w-2xl leading-7 text-slate-600">{publication.summary}</p>
-                    <div className="mt-5 flex flex-wrap gap-x-5 gap-y-2">
-                      {publication.links.map((link) => (
-                        <a
-                          key={link.label}
-                          href={link.href}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="inline-flex items-center gap-1.5 text-sm font-semibold text-slate-800 transition-colors hover:text-[#344dba]"
-                        >
-                          {link.label}
-                          <ExternalLink className="size-3.5" aria-hidden="true" />
-                        </a>
-                      ))}
-                    </div>
+          <h2 className="font-serif text-3xl font-medium tracking-[-0.045em] text-slate-950 sm:text-4xl">
+            Publications
+          </h2>
+          <div className="mt-8 divide-y divide-slate-200 border-y border-slate-200">
+            {publications.map((publication, index) => (
+              <article
+                key={publication.title}
+                className="grid gap-6 py-8 sm:grid-cols-[13.5rem_minmax(0,1fr)] sm:items-start sm:gap-8"
+              >
+                <a
+                  href={publication.imageHref}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group relative aspect-[4/3] w-full max-w-[17rem] overflow-hidden rounded-xl border border-slate-200 bg-white"
+                  aria-label={`Open ${publication.title}`}
+                >
+                  <Image
+                    src={publication.image}
+                    alt={publication.imageAlt}
+                    fill
+                    sizes="(min-width: 640px) 216px, 272px"
+                    className="object-contain p-2 transition-transform duration-300 group-hover:scale-[1.02]"
+                  />
+                </a>
+                <div>
+                  <p className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs font-semibold uppercase tracking-[0.16em] text-[#344dba]">
+                    <span className="font-mono tracking-normal text-slate-400">0{index + 1}</span>
+                    <span>{publication.venue}</span>
+                  </p>
+                  <h3 className="mt-3 text-xl font-semibold leading-7 tracking-[-0.025em] text-slate-900 sm:text-2xl">
+                    {publication.title}
+                  </h3>
+                  <p className="mt-3 max-w-3xl leading-7 text-slate-600">{publication.summary}</p>
+                  <div className="mt-5 flex flex-wrap gap-x-5 gap-y-2">
+                    {publication.links.map((link) => (
+                      <a
+                        key={link.label}
+                        href={link.href}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center gap-1.5 text-sm font-semibold text-slate-800 transition-colors hover:text-[#344dba]"
+                      >
+                        {link.label}
+                        <ExternalLink className="size-3.5" aria-hidden="true" />
+                      </a>
+                    ))}
                   </div>
-                </article>
-              ))}
-            </div>
+                </div>
+              </article>
+            ))}
           </div>
-
         </section>
 
         <section id="experience" className="border-b border-slate-200 py-16 lg:py-24">
