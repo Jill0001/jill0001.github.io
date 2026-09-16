@@ -35,7 +35,9 @@ jobs:
         run: npm ci
 
       - name: Build static site
-        run: npm run build
+        run: |
+          npm run build
+          printf '%s\n' "$GITHUB_SHA" > out/deployment-revision.txt
         env:
           PAGES_BASE_PATH: ${{ steps.pages.outputs.base_path }}
 
@@ -55,3 +57,19 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+      - name: Verify live website
+        env:
+          SITE_URL: ${{ steps.deployment.outputs.page_url }}
+        run: |
+          for attempt in $(seq 1 30); do
+            revision=$(curl --fail --silent --show-error --max-time 15 "${SITE_URL}deployment-revision.txt?revision=${GITHUB_SHA}&attempt=${attempt}" || true)
+            if [ "$revision" = "$GITHUB_SHA" ]; then
+              html=$(curl --fail --silent --show-error --max-time 30 "${SITE_URL}?revision=${GITHUB_SHA}")
+              grep -q '/_next/static/' <<< "$html"
+              exit 0
+            fi
+            sleep 10
+          done
+          echo "The live website does not match this deployment."
+          exit 1
