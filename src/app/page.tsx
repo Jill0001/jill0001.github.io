@@ -12,6 +12,8 @@ type Publication = {
   title: string;
   authors: string[];
   equalContributionAuthors?: string[];
+  coreContributors?: string[];
+  videoSrc?: string;
   image: string;
   imageAlt: string;
   imageHref: string;
@@ -20,6 +22,26 @@ type Publication = {
 };
 
 const publications: Publication[] = [
+  {
+    venue: "Preprint 2026",
+    title: "Agent as Policy for Robotic Manipulation",
+    authors: [
+      "Mengzhao Jia",
+      "Yang Lin",
+      "Xixin Zhang",
+      "Zhihan Zhang",
+      "Xiaobai Liu",
+      "Meng Jiang",
+    ],
+    coreContributors: ["Mengzhao Jia", "Yang Lin", "Xixin Zhang"],
+    image: "/images/publications/agent-as-policy.jpg",
+    imageAlt: "Agent as Policy robotic manipulation demonstrations",
+    imageHref: "/videos/agent-as-policy.mp4",
+    videoSrc: "/videos/agent-as-policy.mp4",
+    summary:
+      "Agent as Policy (AGP) lets a general purpose agent control a physical robot through visual reasoning, runtime programming, and feedback from execution. It performs assembly, block construction, dice flipping, targeted throwing, and bimanual towel folding without task or environment specific training.",
+    links: [{ label: "Video", href: "/videos/agent-as-policy.mp4" }],
+  },
   {
     venue: "ACL 2026",
     title: "MMTutorBench: The First Multimodal Benchmark for AI Math Tutoring",
@@ -386,24 +408,40 @@ export default function Home() {
                 key={publication.title}
                 className="grid gap-6 py-8 sm:grid-cols-[13.5rem_minmax(0,1fr)] sm:items-start sm:gap-8"
               >
-                <a
-                  href={publication.imageHref}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="group relative aspect-[4/3] w-full max-w-[17rem] overflow-hidden rounded-xl border border-slate-200 bg-white"
-                  aria-label={`Open ${publication.title}`}
-                >
-                  <Image
-                    src={publication.image}
-                    alt={publication.imageAlt}
-                    fill
-                    sizes="(min-width: 640px) 216px, 272px"
-                    className="object-contain p-2 transition-transform duration-300 group-hover:scale-[1.02]"
-                  />
-                </a>
+                {publication.videoSrc ? (
+                  <video
+                    controls
+                    playsInline
+                    preload="none"
+                    poster={publication.image}
+                    width={960}
+                    height={720}
+                    aria-label={`${publication.title} promotional video`}
+                    className="aspect-[4/3] w-full max-w-[17rem] rounded-xl border border-slate-200 bg-black"
+                  >
+                    <source src={publication.videoSrc} type="video/mp4" />
+                    <a href={publication.videoSrc}>Watch the Agent as Policy video</a>
+                  </video>
+                ) : (
+                  <a
+                    href={publication.imageHref}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="group relative aspect-[4/3] w-full max-w-[17rem] overflow-hidden rounded-xl border border-slate-200 bg-white"
+                    aria-label={`Open ${publication.title}`}
+                  >
+                    <Image
+                      src={publication.image}
+                      alt={publication.imageAlt}
+                      fill
+                      sizes="(min-width: 640px) 216px, 272px"
+                      className="object-contain p-2 transition-transform duration-300 group-hover:scale-[1.02]"
+                    />
+                  </a>
+                )}
                 <div>
                   <p className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs font-semibold uppercase tracking-[0.16em] text-[#344dba]">
-                    <span className="font-mono tracking-normal text-slate-400">0{index + 1}</span>
+                    <span className="font-mono tracking-normal text-slate-400">{String(index + 1).padStart(2, "0")}</span>
                     <span>{publication.venue}</span>
                   </p>
                   <h3 className="mt-3 text-xl font-semibold leading-7 tracking-[-0.025em] text-slate-900 sm:text-2xl">
@@ -417,7 +455,7 @@ export default function Home() {
                         ) : (
                           author
                         )}
-                        {publication.equalContributionAuthors?.includes(author) ? (
+                        {(publication.equalContributionAuthors?.includes(author) || publication.coreContributors?.includes(author)) ? (
                           <sup className="text-[0.65rem] font-semibold">*</sup>
                         ) : null}
                         {authorIndex < publication.authors.length - 1 ? ", " : ""}
@@ -426,6 +464,9 @@ export default function Home() {
                   </p>
                   {publication.equalContributionAuthors ? (
                     <p className="mt-1 text-xs italic text-slate-500">* Equal Contribution</p>
+                  ) : null}
+                  {publication.coreContributors ? (
+                    <p className="mt-1 text-xs italic text-slate-500">* Core contributors</p>
                   ) : null}
                   <p className="mt-3 max-w-3xl leading-7 text-slate-600">{publication.summary}</p>
                   <div className="mt-5 flex flex-wrap gap-2">
