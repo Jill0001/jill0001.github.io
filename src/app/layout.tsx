@@ -3,6 +3,9 @@ import Script from "next/script";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://jill0001.github.io"),
+  alternates: { canonical: "/" },
+  verification: { google: "D_Pvu2lr-SQDnWe3dUpbjImC6_UuENcANHJo4trUPY4" },
   title: "Mengzhao Jia | Multimodal AI Researcher",
   description:
     "Personal website of Mengzhao Jia, a Ph.D. student researching multimodal reasoning and vision-language models at the University of Notre Dame.",
