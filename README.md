@@ -44,3 +44,9 @@ For a user site, the workflow automatically exports from the site root. It also 
 ## Attribution
 
 This project started from the [AI Website Cloner Template](https://github.com/JCodesMore/ai-website-cloner-template), released under the MIT License. The page implementation and content have been rewritten for this personal website.
+
+## Private visitor analytics
+
+Production pages use GoatCounter to record visits. View reports at [mengzhao-jia.goatcounter.com](https://mengzhao-jia.goatcounter.com/) using the existing GoatCounter login. This site's reports are separate from the Agent as Policy project reports.
+
+The dashboard is restricted to logged in users. The public visitor counter is disabled. The script is configured in `src/app/layout.tsx` and does not load during development. Statistics begin when tracking is deployed.

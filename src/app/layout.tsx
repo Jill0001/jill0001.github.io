@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -29,7 +30,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        {children}
+        {process.env.NODE_ENV === "production" && (
+          <Script
+            src="https://gc.zgo.at/count.js"
+            data-goatcounter="https://mengzhao-jia.goatcounter.com/count"
+            strategy="afterInteractive"
+          />
+        )}
+      </body>
     </html>
   );
 }
