@@ -292,14 +292,6 @@ export default function Home() {
             <a className="transition-colors hover:text-slate-950" href="#education">
               Education
             </a>
-            <a
-              className="inline-flex items-center gap-1 text-slate-950 transition-colors hover:text-[#344dba]"
-              href="/Mengzhao_Jia_CV.pdf"
-              target="_blank"
-              rel="noreferrer"
-            >
-              CV <ArrowUpRight className="size-3.5" aria-hidden="true" />
-            </a>
           </nav>
         </div>
       </header>
