@@ -366,8 +366,8 @@ export default function Home() {
               of Notre Dame, advised by Prof. Meng Jiang. My research interests include multimodal
               large language models, multimodal reasoning, reinforcement learning, and
               vision-language-action models. Before starting my Ph.D., I received my M.S. in
-              Computer Science and Engineering from Shandong University, advised by Prof. Liqiang
-              Nie. I received my B.S. in Electronic Science and Technology from Shandong University.
+              Computer Science and Engineering from Shandong University. I received my B.S. in
+              Electronic Science and Technology from Shandong University.
             </p>
 
             <div className="mt-7 max-w-2xl border-l-2 border-[#344dba] pl-4">
