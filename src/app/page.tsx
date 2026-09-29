@@ -242,7 +242,7 @@ const education = [
   {
     period: "2020 — 2023",
     degree: "M.S. in Computer Science and Engineering",
-    school: "Shandong University, advised by Prof. Liqiang Nie.",
+    school: "Shandong University",
   },
   {
     period: "2016 — 2020",
@@ -362,7 +362,7 @@ export default function Home() {
               Mengzhao Jia
             </h1>
             <p className="mt-7 max-w-2xl text-base leading-8 text-slate-600">
-              I am a third-year Ph.D. student in Computer Science and Engineering at the University
+              I am a fourth-year Ph.D. student in Computer Science and Engineering at the University
               of Notre Dame, advised by Prof. Meng Jiang. My research interests include multimodal
               large language models, multimodal reasoning, reinforcement learning, and
               vision-language-action models. Before starting my Ph.D., I received my M.S. in
