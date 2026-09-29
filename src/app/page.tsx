@@ -36,11 +36,16 @@ const publications: Publication[] = [
     coreContributors: ["Mengzhao Jia", "Yang Lin", "Xixin Zhang"],
     image: "/images/publications/agent-as-policy.jpg",
     imageAlt: "Agent as Policy robotic manipulation demonstrations",
-    imageHref: "/videos/agent-as-policy.mp4",
+    imageHref: "https://agent-as-policy-2026.github.io/",
     videoSrc: "/videos/agent-as-policy.mp4",
     summary:
       "Agent as Policy (AGP) lets a general purpose agent control a physical robot through visual reasoning, runtime programming, and feedback from execution. It performs assembly, block construction, dice flipping, targeted throwing, and bimanual towel folding without task or environment specific training.",
-    links: [{ label: "Video", href: "/videos/agent-as-policy.mp4" }],
+    links: [
+      { label: "Project", href: "https://agent-as-policy-2026.github.io/" },
+      { label: "Paper", href: "https://arxiv.org/abs/2609.12541" },
+      { label: "Code", href: "https://github.com/agent-as-policy-2026/agent-as-policy" },
+      { label: "Video", href: "/videos/agent-as-policy.mp4" },
+    ],
   },
   {
     venue: "ACL 2026",
@@ -488,7 +493,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="experience" className="border-b border-slate-200 py-16 lg:py-24">
+        <section id="experience" className="pt-16 lg:pt-24">
           <h2 className="font-serif text-3xl font-medium tracking-[-0.045em] text-slate-950 sm:text-4xl">
             Work Experience
           </h2>

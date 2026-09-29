@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://jill0001.github.io"),
   alternates: { canonical: "/" },
   verification: { google: "D_Pvu2lr-SQDnWe3dUpbjImC6_UuENcANHJo4trUPY4" },
-  title: "Mengzhao Jia | Multimodal AI Researcher",
+  title: "Mengzhao Jia",
   description:
     "Personal website of Mengzhao Jia, a Ph.D. student researching multimodal reasoning and vision-language models at the University of Notre Dame.",
   keywords: [
@@ -18,7 +18,8 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Mengzhao Jia" }],
   openGraph: {
-    title: "Mengzhao Jia | Multimodal AI Researcher",
+    title: "Mengzhao Jia",
+    siteName: "Mengzhao Jia",
     description:
       "Research in multimodal reasoning, vision-language models, and trustworthy AI.",
     type: "website",
@@ -34,6 +35,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              name: "Mengzhao Jia",
+              url: "https://jill0001.github.io/",
+            }).replace(/</g, "\\u003c"),
+          }}
+        />
         {children}
         {process.env.NODE_ENV === "production" && (
           <Script
