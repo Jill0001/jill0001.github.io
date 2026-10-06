@@ -12,12 +12,12 @@ export const metadata: Metadata = {
     shortcut: "/blank-icon.svg",
   },
   description:
-    "Personal website of Mengzhao Jia, a Ph.D. student researching multimodal reasoning and vision-language models at the University of Notre Dame.",
+    "Personal website of Mengzhao Jia, a Ph.D. student researching robotics and agentic AI at the University of Notre Dame.",
   keywords: [
     "Mengzhao Jia",
-    "multimodal reasoning",
-    "vision-language models",
-    "multimodal AI",
+    "robotics",
+    "agentic AI",
+    "vision-language-action models",
     "University of Notre Dame",
   ],
   authors: [{ name: "Mengzhao Jia" }],
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     title: "Mengzhao Jia",
     siteName: "Mengzhao Jia",
     description:
-      "Research in multimodal reasoning, vision-language models, and trustworthy AI.",
+      "Research in robotics, agentic AI, reinforcement learning, and vision-language-action models.",
     type: "website",
     url: "https://jill0001.github.io/",
   },

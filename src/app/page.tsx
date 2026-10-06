@@ -286,7 +286,7 @@ export default function Home() {
                 Mengzhao Jia
               </h1>
               <p className="mt-4 font-serif text-lg leading-7 text-slate-500 sm:text-xl">
-                Multimodal Reasoning, Reinforcement Learning, and Robotics
+                Robotics and Agentic AI
               </p>
             </div>
             <Image
@@ -308,14 +308,14 @@ export default function Home() {
               Orby AI in Mountain View and Tencent AI Lab in Seattle.
             </p>
             <p>
-              My research focuses on <strong className="font-semibold text-slate-900">multimodal reasoning</strong>,
-              reinforcement learning, and vision-language-action models. I study how to improve
-              the accuracy and faithfulness of multimodal reasoning, and how general-purpose agents
-              can control robots through visual reasoning, programming, and physical feedback.
+              My research focuses on <strong className="font-semibold text-slate-900">robotics and agentic AI</strong>.
+              I study how general-purpose agents can control robots through visual reasoning,
+              programming, and physical feedback, with interests in reinforcement learning
+              and vision-language-action models.
             </p>
             <p>
               I am open to <strong className="font-semibold text-slate-900">internships and full-time roles</strong> in
-              multimodal AI, reinforcement learning, and vision-language-action models.
+              robotics and agentic AI.
               Please <a href="mailto:jiamengzhao98@gmail.com" className="text-[#344dba] hover:underline">get in touch</a>.
             </p>
           </div>
