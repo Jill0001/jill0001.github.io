@@ -72,7 +72,7 @@ const publications: Publication[] = [
     ],
   },
   {
-    venue: "Findings of ACL 2026",
+    venue: "ACL 2026 (Findings)",
     title: "AutoRubric: Rubric-Based Generative Rewards for Faithful Multimodal Reasoning",
     authors: [
       "Mengzhao Jia",
@@ -93,7 +93,7 @@ const publications: Publication[] = [
     ],
   },
   {
-    venue: "Findings of EMNLP 2026",
+    venue: "EMNLP 2026 (Findings)",
     title: "Prioritizing the Best: Incentivizing Reliable Multimodal Reasoning by Rewarding Beyond Answer Correctness",
     authors: ["Mengzhao Jia", "Zhihan Zhang", "Meng Jiang"],
     image: "/images/publications/prioritizing-best.png",
