@@ -93,7 +93,7 @@ const publications: Publication[] = [
     ],
   },
   {
-    venue: "arXiv 2026",
+    venue: "Findings of EMNLP 2026 (accepted)",
     title: "Prioritizing the Best: Incentivizing Reliable Multimodal Reasoning by Rewarding Beyond Answer Correctness",
     authors: ["Mengzhao Jia", "Zhihan Zhang", "Meng Jiang"],
     image: "/images/publications/prioritizing-best.png",
@@ -114,8 +114,8 @@ const publications: Publication[] = [
       "Zhihan Zhang",
       "Siru Ouyang",
       "Hongming Zhang",
-      "Meng Jiang",
       "Dong Yu",
+      "Meng Jiang",
     ],
     image: "/images/publications/leopard.png",
     imageAlt: "Leopard model overview",
