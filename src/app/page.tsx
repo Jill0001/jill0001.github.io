@@ -93,7 +93,7 @@ const publications: Publication[] = [
     ],
   },
   {
-    venue: "Findings of EMNLP 2026 (accepted)",
+    venue: "Findings of EMNLP 2026",
     title: "Prioritizing the Best: Incentivizing Reliable Multimodal Reasoning by Rewarding Beyond Answer Correctness",
     authors: ["Mengzhao Jia", "Zhihan Zhang", "Meng Jiang"],
     image: "/images/publications/prioritizing-best.png",
@@ -191,7 +191,7 @@ const publications: Publication[] = [
     ],
   },
   {
-    venue: "arXiv 2024",
+    venue: "Preprint 2024",
     title: "Describe-then-Reason: Improving Multimodal Mathematical Reasoning through Visual Comprehension Training",
     authors: ["Mengzhao Jia", "Zhihan Zhang", "Wenhao Yu", "Fangkai Jiao", "Meng Jiang"],
     image: "/images/publications/describe-then-reason.png",
