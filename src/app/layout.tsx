@@ -7,6 +7,10 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
   verification: { google: "D_Pvu2lr-SQDnWe3dUpbjImC6_UuENcANHJo4trUPY4" },
   title: "Mengzhao Jia",
+  icons: {
+    icon: "/blank-icon.svg",
+    shortcut: "/blank-icon.svg",
+  },
   description:
     "Personal website of Mengzhao Jia, a Ph.D. student researching multimodal reasoning and vision-language models at the University of Notre Dame.",
   keywords: [
