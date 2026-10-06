@@ -1,12 +1,4 @@
 import Image from "next/image";
-import {
-  ArrowUpRight,
-  BookOpen,
-  ExternalLink,
-  FileText,
-  MapPin,
-} from "lucide-react";
-
 type Publication = {
   venue: string;
   title: string;
@@ -252,146 +244,80 @@ const education = [
 ];
 
 const socialLinks = [
-  {
-    label: "Google Scholar",
-    href: "https://scholar.google.com/citations?hl=en&user=E332upAAAAAJ",
-    icon: BookOpen,
-  },
-  {
-    label: "LinkedIn",
-    href: "https://www.linkedin.com/in/mengzhao-jia-a2b838294/",
-    icon: ExternalLink,
-  },
+  { label: "Email", href: "mailto:jiamengzhao98@gmail.com" },
+  { label: "Google Scholar", href: "https://scholar.google.com/citations?hl=en&user=E332upAAAAAJ" },
+  { label: "GitHub", href: "https://github.com/Jill0001/" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/mengzhao-jia-a2b838294/" },
+  { label: "CV", href: "/Mengzhao_Jia_CV.pdf" },
 ];
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-[#fbfbf8] text-slate-900">
-      <header className="border-b border-slate-200/90 bg-[#fbfbf8]/95">
+      <header className="border-b border-slate-200/90">
         <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-x-8 gap-y-4 px-5 py-5 sm:px-8">
-          <a
-            href="#top"
-            className="font-serif text-xl font-semibold tracking-[-0.05em] text-slate-950 transition-colors hover:text-[#344dba]"
-            aria-label="Mengzhao Jia home"
-          >
-            Mengzhao Jia
-          </a>
-          <nav
-            aria-label="Primary navigation"
-            className="flex w-full flex-wrap items-center justify-between gap-x-3 gap-y-2 text-sm font-medium text-slate-600 sm:w-auto sm:justify-end sm:gap-x-7"
-          >
-            <a className="transition-colors hover:text-slate-950" href="#about">
-              About
-            </a>
-            <a className="transition-colors hover:text-slate-950" href="#work">
-              Publications
-            </a>
-            <a className="transition-colors hover:text-slate-950" href="#experience">
-              Work Experience
-            </a>
-            <a className="transition-colors hover:text-slate-950" href="#education">
-              Education
-            </a>
+          <nav aria-label="Primary navigation" className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-slate-600">
+            <a className="hover:text-[#344dba]" href="#about">About</a>
+            <a className="hover:text-[#344dba]" href="#work">Publications</a>
+            <a className="hover:text-[#344dba]" href="#experience">Experience</a>
+            <a className="hover:text-[#344dba]" href="#education">Education</a>
+          </nav>
+          <nav aria-label="Contact and profiles" className="flex flex-wrap gap-x-3 gap-y-2 text-sm text-[#344dba] sm:gap-x-5">
+            {socialLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                target={link.href.startsWith("mailto:") ? undefined : "_blank"}
+                rel={link.href.startsWith("mailto:") ? undefined : "noreferrer"}
+                className="hover:underline"
+              >
+                {link.label}
+              </a>
+            ))}
           </nav>
         </div>
       </header>
 
       <main id="top" className="mx-auto max-w-6xl px-5 sm:px-8">
-        <section id="about" className="grid gap-12 border-b border-slate-200 py-16 lg:grid-cols-[minmax(260px,0.72fr)_minmax(0,1.45fr)] lg:gap-20 lg:py-24">
-          <aside className="lg:pt-2">
-            <div className="relative aspect-square max-w-[235px] overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white shadow-[0_12px_35px_rgba(15,23,42,0.06)]">
-              <Image
-                src="/mengzhao-jia.jpg"
-                alt="Portrait of Mengzhao Jia"
-                fill
-                priority
-                sizes="235px"
-                className="object-cover"
-              />
-            </div>
-
-            <div className="mt-7 text-sm leading-6 text-slate-600">
-              <p className="flex items-start gap-2">
-                <MapPin className="mt-1 size-3.5 shrink-0 text-slate-400" aria-hidden="true" />
-                <span>Notre Dame, Indiana</span>
+        <section id="about" className="border-b border-slate-200 py-12 sm:py-16">
+          <div className="flex flex-col-reverse items-start justify-between gap-7 sm:flex-row sm:items-center sm:gap-12">
+            <div>
+              <h1 className="font-serif text-4xl font-semibold leading-tight tracking-tight text-slate-950 sm:text-5xl">
+                Mengzhao Jia
+              </h1>
+              <p className="mt-4 font-serif text-lg leading-7 text-slate-500 sm:text-xl">
+                Multimodal Reasoning, Reinforcement Learning, and Robotics
               </p>
             </div>
+            <Image
+              src="/mengzhao-jia.jpg"
+              alt="Portrait of Mengzhao Jia"
+              width={190}
+              height={190}
+              priority
+              sizes="(max-width: 639px) 140px, 190px"
+              className="aspect-square w-[140px] shrink-0 rounded-lg object-cover sm:w-[190px]"
+            />
+          </div>
 
-            <div className="mt-7 flex flex-wrap gap-2">
-              {socialLinks.map((link) => {
-                const Icon = link.icon;
-
-                return (
-                  <a
-                    key={link.label}
-                    href={link.href}
-                    target={link.href.startsWith("http") ? "_blank" : undefined}
-                    rel={link.href.startsWith("http") ? "noreferrer" : undefined}
-                    className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3.5 py-2 text-xs font-medium text-slate-700 transition-all hover:-translate-y-0.5 hover:border-slate-300 hover:text-[#344dba] hover:shadow-sm"
-                  >
-                    <Icon className="size-3.5" aria-hidden="true" />
-                    {link.label}
-                  </a>
-                );
-              })}
-            </div>
-
-            <a
-              href="/Mengzhao_Jia_CV.pdf"
-              target="_blank"
-              rel="noreferrer"
-              className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-slate-900 transition-colors hover:text-[#344dba]"
-            >
-              <FileText className="size-4" aria-hidden="true" />
-              CV
-              <ArrowUpRight className="size-3.5" aria-hidden="true" />
-            </a>
-          </aside>
-
-          <div className="max-w-3xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#344dba]">Ph.D. Student</p>
-            <h1 className="mt-5 max-w-2xl font-serif text-5xl font-medium leading-[0.98] tracking-[-0.055em] text-slate-950 sm:text-6xl lg:text-7xl">
-              Mengzhao Jia
-            </h1>
-            <p className="mt-7 max-w-2xl text-base leading-8 text-slate-600">
+          <div className="mt-10 space-y-5 font-serif text-lg leading-8 text-slate-700 sm:mt-12 sm:text-xl sm:leading-9">
+            <p>
               I am a fourth-year Ph.D. student in Computer Science and Engineering at the University
-              of Notre Dame, advised by Prof. Meng Jiang. My research interests include multimodal
-              large language models, multimodal reasoning, reinforcement learning, and
-              vision-language-action models. Before starting my Ph.D., I received my M.S. in
-              Computer Science and Engineering from Shandong University. I received my B.S. in
-              Electronic Science and Technology from Shandong University.
+              of Notre Dame, advised by Prof. Meng Jiang. Before starting my Ph.D., I received my
+              master’s and bachelor’s degrees from Shandong University. I previously interned at
+              Orby AI in Mountain View and Tencent AI Lab in Seattle.
             </p>
-
-            <div className="mt-7 max-w-2xl border-l-2 border-[#344dba] pl-4">
-              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#344dba]">
-                Open to internships &amp; full-time roles
-              </p>
-              <p className="mt-2 text-sm leading-6 text-slate-600">
-                I am currently seeking opportunities in multimodal AI, reinforcement learning, and
-                vision-language-action models. Please reach out at{" "}
-                <span className="font-medium text-slate-700">
-                  jiamengzhao98 [at] gmail [dot] com
-                </span>
-                .
-              </p>
-            </div>
-
-            <div className="mt-8 flex flex-wrap gap-2.5">
-              {[
-                "Multimodal Large Language Models",
-                "Multimodal Reasoning",
-                "Reinforcement Learning",
-                "Vision Language Action Models",
-              ].map((interest) => (
-                <span
-                  key={interest}
-                  className="rounded-full border border-slate-200 bg-white px-3.5 py-2 text-sm text-slate-600"
-                >
-                  {interest}
-                </span>
-              ))}
-            </div>
-
+            <p>
+              My research focuses on <strong className="font-semibold text-slate-900">multimodal reasoning</strong>,
+              reinforcement learning, and vision-language-action models. I study how to improve
+              the accuracy and faithfulness of multimodal reasoning, and how general-purpose agents
+              can control robots through visual reasoning, programming, and physical feedback.
+            </p>
+            <p>
+              I am open to <strong className="font-semibold text-slate-900">internships and full-time roles</strong> in
+              multimodal AI, reinforcement learning, and vision-language-action models.
+              Please <a href="mailto:jiamengzhao98@gmail.com" className="text-[#344dba] hover:underline">get in touch</a>.
+            </p>
           </div>
         </section>
 
