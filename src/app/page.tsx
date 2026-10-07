@@ -321,7 +321,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="work" className="border-b border-slate-200 py-16 lg:py-24">
+        <section id="work" className="pt-16 lg:pt-24">
           <h2 className="font-serif text-3xl font-medium tracking-[-0.045em] text-slate-950 sm:text-4xl">
             Publications
           </h2>
@@ -411,7 +411,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="experience" className="pt-16 lg:pt-24">
+        <section id="experience" className="pt-10 sm:pt-12">
           <h2 className="font-serif text-3xl font-medium tracking-[-0.045em] text-slate-950 sm:text-4xl">
             Work Experience
           </h2>
