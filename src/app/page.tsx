@@ -308,10 +308,11 @@ export default function Home() {
               Orby AI in Mountain View and Tencent AI Lab in Seattle.
             </p>
             <p>
-              My research focuses on <strong className="font-semibold text-slate-900">robotics and agentic AI</strong>.
-              I study how general-purpose agents can control robots through visual reasoning,
-              programming, and physical feedback, with interests in reinforcement learning
-              and vision-language-action models.
+              My research focuses on <strong className="font-semibold text-slate-900">improving the reasoning capabilities of multimodal foundation models</strong> through
+              supervised fine-tuning and reinforcement learning. Recently, I have been extending
+              this work to <strong className="font-semibold text-slate-900">agentic AI for robotics</strong>, exploring
+              how general-purpose agents can control robots through visual reasoning, programming,
+              and physical feedback.
             </p>
             <p>
               I am open to <strong className="font-semibold text-slate-900">internships and full-time roles</strong> in
