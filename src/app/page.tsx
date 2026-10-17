@@ -309,8 +309,8 @@ export default function Home() {
             </p>
             <p>
               My research focuses on <strong className="font-semibold text-slate-900">improving the reasoning capabilities of multimodal foundation models</strong> through
-              supervised fine-tuning and reinforcement learning. Recently, I have been extending
-              this work to <strong className="font-semibold text-slate-900">agentic AI for robotics</strong>, exploring
+              reasoning-oriented data curation and rubric-based reinforcement learning. Recently,
+              I have expanded my research to <strong className="font-semibold text-slate-900">agentic AI for robotics</strong>, exploring
               how general-purpose agents can control robots through visual reasoning, programming,
               and physical feedback.
             </p>
