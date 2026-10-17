@@ -255,7 +255,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-[#fbfbf8] text-slate-900">
       <header className="border-b border-slate-200/90">
-        <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-x-8 gap-y-4 px-5 py-5 sm:px-8">
+        <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-x-8 gap-y-3 px-5 py-4 sm:px-8">
           <nav aria-label="Primary navigation" className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-slate-600">
             <a className="hover:text-[#344dba]" href="#about">About</a>
             <a className="hover:text-[#344dba]" href="#work">Publications</a>
@@ -278,14 +278,14 @@ export default function Home() {
         </div>
       </header>
 
-      <main id="top" className="mx-auto max-w-6xl px-5 sm:px-8">
-        <section id="about" className="border-b border-slate-200 py-12 sm:py-16">
+      <main id="top" className="mx-auto max-w-5xl px-5 sm:px-8">
+        <section id="about" className="border-b border-slate-200 py-8 sm:py-10">
           <div className="flex flex-col-reverse items-start justify-between gap-7 sm:flex-row sm:items-center sm:gap-12">
             <div>
-              <h1 className="font-serif text-4xl font-semibold leading-tight tracking-tight text-slate-950 sm:text-5xl">
+              <h1 className="font-serif text-3xl font-semibold leading-tight tracking-tight text-slate-950 sm:text-[2rem]">
                 Mengzhao Jia
               </h1>
-              <p className="mt-4 font-serif text-lg leading-7 text-slate-500 sm:text-xl">
+              <p className="mt-2 font-serif text-base leading-6 text-slate-500">
                 Robotics and Agentic AI
               </p>
             </div>
@@ -295,12 +295,12 @@ export default function Home() {
               width={190}
               height={190}
               priority
-              sizes="(max-width: 639px) 140px, 190px"
-              className="aspect-square w-[140px] shrink-0 rounded-lg object-cover sm:w-[190px]"
+              sizes="(max-width: 639px) 120px, 150px"
+              className="aspect-square w-[120px] shrink-0 rounded-lg object-cover sm:w-[150px]"
             />
           </div>
 
-          <div className="mt-10 space-y-5 font-serif text-lg leading-8 text-slate-700 sm:mt-12 sm:text-xl sm:leading-9">
+          <div className="mt-6 space-y-3 font-serif text-base leading-relaxed text-slate-700">
             <p>
               I am a fourth-year Ph.D. student in Computer Science and Engineering at the University
               of Notre Dame, advised by Prof. Meng Jiang. Before starting my Ph.D., I received my
@@ -322,15 +322,15 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="work" className="pt-16 lg:pt-24">
-          <h2 className="font-serif text-3xl font-medium tracking-[-0.045em] text-slate-950 sm:text-4xl">
+        <section id="work" className="pt-8 sm:pt-10">
+          <h2 className="font-serif text-2xl font-medium tracking-tight text-slate-950">
             Publications
           </h2>
-          <div className="mt-8 divide-y divide-slate-200 border-y border-slate-200">
+          <div className="mt-5 divide-y divide-slate-200 border-y border-slate-200">
             {publications.map((publication, index) => (
               <article
                 key={publication.title}
-                className="grid gap-6 py-8 sm:grid-cols-[13.5rem_minmax(0,1fr)] sm:items-start sm:gap-8"
+                className="grid gap-4 py-6 sm:grid-cols-[11rem_minmax(0,1fr)] sm:items-start sm:gap-6"
               >
                 {publication.videoSrc ? (
                   <video
@@ -358,7 +358,7 @@ export default function Home() {
                       src={publication.image}
                       alt={publication.imageAlt}
                       fill
-                      sizes="(min-width: 640px) 216px, 272px"
+                      sizes="(min-width: 640px) 176px, 272px"
                       className="object-contain p-2 transition-transform duration-300 group-hover:scale-[1.02]"
                     />
                   </a>
@@ -368,10 +368,10 @@ export default function Home() {
                     <span className="font-mono tracking-normal text-slate-400">{String(index + 1).padStart(2, "0")}</span>
                     <span>{publication.venue}</span>
                   </p>
-                  <h3 className="mt-3 text-xl font-semibold leading-7 tracking-[-0.025em] text-slate-900 sm:text-2xl">
+                  <h3 className="mt-2 text-lg font-semibold leading-6 tracking-tight text-slate-900">
                     {publication.title}
                   </h3>
-                  <p className="mt-2 max-w-3xl text-sm italic leading-6 text-slate-600">
+                  <p className="mt-1.5 max-w-3xl text-sm italic leading-5 text-slate-600">
                     {publication.authors.map((author, authorIndex) => (
                       <span key={author}>
                         {author === "Mengzhao Jia" ? (
@@ -392,8 +392,8 @@ export default function Home() {
                   {publication.coreContributors ? (
                     <p className="mt-1 text-xs italic text-slate-500">* Core contributors</p>
                   ) : null}
-                  <p className="mt-3 max-w-3xl leading-7 text-slate-600">{publication.summary}</p>
-                  <div className="mt-5 flex flex-wrap gap-2">
+                  <p className="mt-2 max-w-3xl text-[0.9375rem] leading-6 text-slate-600">{publication.summary}</p>
+                  <div className="mt-3 flex flex-wrap gap-2">
                     {publication.links.map((link) => (
                       <a
                         key={link.label}
@@ -412,40 +412,40 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="experience" className="pt-10 sm:pt-12">
-          <h2 className="font-serif text-3xl font-medium tracking-[-0.045em] text-slate-950 sm:text-4xl">
+        <section id="experience" className="pt-8 sm:pt-10">
+          <h2 className="font-serif text-2xl font-medium tracking-tight text-slate-950">
             Work Experience
           </h2>
-          <ol className="mt-8 divide-y divide-slate-200 border-y border-slate-200">
+          <ol className="mt-5 divide-y divide-slate-200 border-y border-slate-200">
             {experiences.map((experience) => (
               <li
                 key={`${experience.organization}-${experience.period}`}
-                className="grid gap-3 py-7 sm:grid-cols-[13.5rem_minmax(0,1fr)] sm:gap-8"
+                className="grid gap-2 py-5 sm:grid-cols-[11rem_minmax(0,1fr)] sm:gap-6"
               >
                 <p className="font-mono text-xs leading-6 text-slate-400">{experience.period}</p>
                 <div>
-                  <h3 className="text-lg font-semibold text-slate-900">{experience.role}</h3>
-                  <p className="mt-1 font-medium text-slate-700">{experience.organization}</p>
+                  <h3 className="text-base font-semibold text-slate-900">{experience.role}</h3>
+                  <p className="mt-1 text-[0.9375rem] text-slate-700">{experience.organization}</p>
                 </div>
               </li>
             ))}
           </ol>
         </section>
 
-        <section id="education" className="py-16 lg:py-24">
-          <h2 className="font-serif text-3xl font-medium tracking-[-0.045em] text-slate-950 sm:text-4xl">
+        <section id="education" className="py-8 sm:py-10">
+          <h2 className="font-serif text-2xl font-medium tracking-tight text-slate-950">
             Education
           </h2>
-          <ol className="mt-8 divide-y divide-slate-200 border-y border-slate-200">
+          <ol className="mt-5 divide-y divide-slate-200 border-y border-slate-200">
             {education.map((item) => (
               <li
                 key={item.degree}
-                className="grid gap-3 py-7 sm:grid-cols-[13.5rem_minmax(0,1fr)] sm:gap-8"
+                className="grid gap-2 py-5 sm:grid-cols-[11rem_minmax(0,1fr)] sm:gap-6"
               >
                 <p className="font-mono text-xs leading-6 text-slate-400">{item.period}</p>
                 <div>
-                  <h3 className="text-lg font-semibold text-slate-900">{item.degree}</h3>
-                  <p className="mt-1 font-medium text-slate-700">{item.school}</p>
+                  <h3 className="text-base font-semibold text-slate-900">{item.degree}</h3>
+                  <p className="mt-1 text-[0.9375rem] text-slate-700">{item.school}</p>
                 </div>
               </li>
             ))}
@@ -455,7 +455,7 @@ export default function Home() {
       </main>
 
       <footer className="border-t border-slate-200">
-        <div className="mx-auto flex max-w-6xl flex-col gap-3 px-5 py-7 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between sm:px-8">
+        <div className="mx-auto flex max-w-5xl flex-col gap-3 px-5 py-5 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between sm:px-8">
           <p>© 2026 Mengzhao Jia</p>
           <div className="flex flex-wrap gap-x-5 gap-y-2">
             <a className="transition-colors hover:text-slate-900" href="https://github.com/Jill0001/" target="_blank" rel="noreferrer">
