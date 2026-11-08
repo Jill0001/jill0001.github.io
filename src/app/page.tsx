@@ -40,6 +40,20 @@ const publications: Publication[] = [
     ],
   },
   {
+    venue: "Project 2026",
+    title: "LabApprentice: Self-Improving Wet-Lab Robotics Harness",
+    authors: [],
+    image: "/images/publications/labapprentice.jpg",
+    imageAlt: "LabApprentice robot preparing a hydrogel at the laboratory bench",
+    imageHref: "https://jill0001.github.io/LabApprentice/",
+    summary:
+      "LabApprentice explores how a robotic coding agent can accumulate and reuse practical tools through physical experiments. It writes and retains programs for pouring, heating, dispensing, and instrument control, then brings these tools together to prepare and measure hydrogels.",
+    links: [
+      { label: "Project", href: "https://jill0001.github.io/LabApprentice/" },
+      { label: "Videos", href: "https://jill0001.github.io/LabApprentice/#experiments" },
+    ],
+  },
+  {
     venue: "ACL 2026",
     title: "MMTutorBench: The First Multimodal Benchmark for AI Math Tutoring",
     authors: [
@@ -371,6 +385,7 @@ export default function Home() {
                   <h3 className="mt-2 text-lg font-semibold leading-6 tracking-tight text-slate-900">
                     {publication.title}
                   </h3>
+                  {publication.authors.length > 0 ? (
                   <p className="mt-1.5 max-w-3xl text-sm italic leading-5 text-slate-600">
                     {publication.authors.map((author, authorIndex) => (
                       <span key={author}>
@@ -386,6 +401,7 @@ export default function Home() {
                       </span>
                     ))}
                   </p>
+                  ) : null}
                   {publication.equalContributionAuthors ? (
                     <p className="mt-1 text-xs italic text-slate-500">* Equal Contribution</p>
                   ) : null}
